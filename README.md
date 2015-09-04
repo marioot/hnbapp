@@ -1,2 +1,2 @@
-README for hnbapp
-==========================
+# hnbapp
+Currency rates hobby app
