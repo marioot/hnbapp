@@ -31,15 +31,8 @@
             <column name="rate" type="double">
                 <constraints nullable="false" />
             </column>
-            <column name="date" type="date">
-                <constraints nullable="false" />
-            </column>
+            <column name="date" type="date"/>
         </createTable>
         
     </changeSet>
-    <changeSet author="mario (generated)" id="1441354085396-18">
-	      <addUniqueConstraint columnNames="name, date"
-	                           constraintName="uniq_fields"
-	                           tableName="currency"/>
-   </changeSet>
 </databaseChangeLog>

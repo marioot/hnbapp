@@ -36,8 +36,7 @@ public class CurrencyService {
 	 * This is scheduled to get fired everyday, at 01:00 (am).
 	 * </p>
 	 */
-//	@Scheduled(cron = "0 0 1 * * ?")
-	@Scheduled(cron = "*/30 * * * * ?")
+	@Scheduled(cron = "0 0 1 * * ?")
 	public void fetchLatestExchangeRates() {
 		DateTime today = new DateTime();
 		DateTimeFormatter fmt = DateTimeFormat.forPattern("ddMMyy");
