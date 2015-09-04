@@ -1,0 +1,40 @@
+<div ng-cloak>
+    <h1>Currency exchange rates</h1>
+    <div class="row top5">
+        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="time.startTime" is-open="status.opened" max-date="time.today" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="time.endTime" is-open="status.opened" max-date="time.today" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+            <label>Resolution: </label>
+            <div class="btn-group" dropdown keyboard-nav>
+                <button id="simple-btn-keyboard-nav" type="button" class="btn btn-primary" dropdown-toggle>
+                    {{selectedResolution.label}} <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="simple-btn-keyboard-nav">
+                    <li ng-repeat="resolution in resolutions" ng-click="selectResolution(resolution)" role="menuitem"><a href="#">{{resolution.label}}</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-6 col-xs-6">
+            <div class="btn-group" ng-click="updateRates()">
+                <label ng-repeat="currency in currencies" class="btn btn-primary" ng-model="currency.selected" btn-checkbox>{{currency.name}}</label>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+           <div google-chart chart="chart" class="top10" style="{{chart.cssStyle}}" ng-show="chart.data"/>
+        </div>
+    </div>
+</div>
