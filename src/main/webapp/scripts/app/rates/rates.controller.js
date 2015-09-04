@@ -34,6 +34,8 @@ angular.module('hnbappApp')
       startTime: new Date(),
       endTime: new Date()
     };
+    $scope.time.startTime.setYear($scope.time.today.getYear() - 1);
+
     $scope.$watch('time.startTime', function(){
       if ($scope.time.startTime) {
         $scope.updateRates();
