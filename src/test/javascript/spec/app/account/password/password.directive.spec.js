@@ -17,6 +17,7 @@ describe('Directive Tests ', function () {
         $httpBackend.whenGET(/api\/account\?cacheBuster=\d+/).respond({});
         $httpBackend.whenGET('scripts/app/main/main.html').respond({});
         $httpBackend.whenGET('scripts/components/navbar/navbar.html').respond({});
+        $httpBackend.whenGET('scripts/app/rates/rates.html').respond({});
     }));
 
     afterEach(function() {

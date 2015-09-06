@@ -34,7 +34,7 @@ angular.module('hnbappApp')
       startTime: new Date(),
       endTime: new Date()
     };
-    $scope.time.startTime.setYear($scope.time.today.getYear() - 1);
+    $scope.time.startTime.setYear($scope.time.today.getFullYear() - 1);
 
     $scope.$watch('time.startTime', function(){
       if ($scope.time.startTime) {
@@ -46,8 +46,11 @@ angular.module('hnbappApp')
         $scope.updateRates();
       }
     });
-    $scope.open = function() {
-      $scope.status.opened = true;
+    $scope.openBefore = function() {
+      $scope.status.beforeOpened = true;
+    };
+    $scope.openAfter = function() {
+      $scope.status.afterOpened = true;
     };
     $scope.status = {
       opened: false

@@ -3,17 +3,17 @@
     <div class="row top5">
         <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
             <p class="input-group">
-              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="time.startTime" is-open="status.opened" max-date="time.today" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="time.startTime" is-open="status.beforeOpened" max-date="time.today" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
               <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                <button type="button" class="btn btn-default" ng-click="openBefore($event)"><i class="glyphicon glyphicon-calendar"></i></button>
               </span>
             </p>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
             <p class="input-group">
-              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="time.endTime" is-open="status.opened" max-date="time.today" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="time.endTime" is-open="status.afterOpened" max-date="time.today" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
               <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                <button type="button" class="btn btn-default" ng-click="openAfter($event)"><i class="glyphicon glyphicon-calendar"></i></button>
               </span>
             </p>
         </div>
