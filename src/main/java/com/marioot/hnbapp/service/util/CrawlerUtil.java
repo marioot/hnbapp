@@ -23,7 +23,7 @@ import com.marioot.hnbapp.domain.Currency;
  */
 public final class CrawlerUtil {
 
-	private static final String CRAWLER_PATH = "hnbscraper.py";
+	private static final String CRAWLER_PATH = "src/main/resources/scripts/hnbscraper.py";
 	private static final Logger log = LoggerFactory.getLogger(CrawlerUtil.class);
 	
 	/**
@@ -50,7 +50,6 @@ public final class CrawlerUtil {
 		Process p;
 		try {
 			p = builder.start();
-			log.debug(p.toString());
 			BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			BufferedReader err = new BufferedReader(new InputStreamReader(p.getErrorStream()));
 
